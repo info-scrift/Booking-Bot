@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "WhatsApp Booking Bot Admin",
+  title: "Green Three BMS",
   description: "Admin panel for managing WhatsApp booking bot",
     generator: 'v0.dev'
 }
