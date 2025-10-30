@@ -1446,6 +1446,9 @@ async function handleSlotSelection(message: string, profile: any, phoneNumber: s
 
     userStates.delete(phoneNumber)
 
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+    const invoiceUrl = `${baseUrl}/booking-invoice/${booking.id}?payment=pending&booking=confirmed`
+
     return `BOOKING CONFIRMED! ✅
 
 Date: ${formatDate(userState.date)}
@@ -1458,6 +1461,7 @@ Amount: Rs. 500
 Due Date: ${formatDate(paymentDueDate.toISOString().split("T")[0])}
 
 ⚠️ Please pay the admin within 3 days or your booking will be cancelled.
+View Invoice: ${invoiceUrl}
 
 Type 'menu' to return to main menu`
   } catch (error) {
